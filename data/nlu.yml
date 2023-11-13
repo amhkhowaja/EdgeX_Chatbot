@@ -1,0 +1,398 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: fetch-sensor-details
+  examples: |
+    - fetch the status of [e3370911-d522-452c-961f-0e774b579251](sensor-id) sensor
+    - show me the details of [43f647ad-5e8c-47d1-b0ce-cb74beed7231](sensor-id) sensor
+    - show me the details of [43f647ad-5e8c-47d1-b0ce-cb74beed7231](sensor-id)
+    - Fetch info related to [8b06d5ab-83d4-4d82-abc2-01d8e9c0a041](sensor-id).
+    - Provide insights for [a2fe5d81-75af-4871-9137-09f189e2879d](sensor-id).
+    - Retrieve data for [09d3c8d8-9a42-4347-8b78-06532a6f8dab](sensor-id).
+    - Show specifics of the ID [fbc2c3bf-1101-4964-9463-52005f6f5085](sensor-id).
+    - Tell me about the device [87e572b7-35db-4a28-9f8b-127d2bb8ed39](sensor-id).
+    - Get insights from [b53be08d-5037-4923-8f56-7d449de422b0](sensor-id).
+    - Share the facts for the identifier [597f620e-1065-4e84-92d3-d5ca571b6b36](sensor-id).
+    - Display information linked to [fda7ed41-3e42-4f29-9766-76958742e3c2](sensor-id).
+    - Elaborate on the details of [9ddbf784-24f7-4282-a3a7-f5825b72edfd](sensor-id).
+    - Provide an overview of the unique ID [17558263-0aaf-4ad6-9b0f-ae73c8c376b7](sensor-id).
+    - Show data for device [c4407f63-97ac-4d96-b685-c73db7b764a5](sensor-id).
+    - Share insights on [6263281d-1edc-4569-a74b-ef9252b86d31](sensor-id).
+    - Get details about the identifier [d745c1a1-78c4-4dd7-a7e5-0372a9f4cb36](sensor-id).
+    - Retrieve information from the identifier [18a35238-39dd-4d44-84b3-0f7ac818ffac](sensor-id).
+    - Show specifics of the identifier [8ef49cc3-345c-46d9-aa72-87649306ed33](sensor-id).
+    - Provide details regarding [5ef72a26-eaf9-4a35-81fc-ccacdf987e19](sensor-id).
+    - Share facts about [319e2911-0f63-4b1b-a816-9058856a2970](sensor-id).
+    - Elaborate on the characteristics of [6c846ae4-777a-4e41-86d5-23ee6966e685](sensor-id).
+    - Display information for identifier [4ab08e57-5419-48eb-931d-72b53a7db7a6](sensor-id).
+    - Fetch details for the unique ID [05ea460d-18cf-4e84-ae86-53ef9f761e66](sensor-id).
+    - Share data for device [13d839a1-95ac-4d14-8b1a-11e07969aa19](sensor-id).
+    - Provide insights into [723125c2-d9af-4154-b753-31c6663198ed](sensor-id).
+    - Get the specifics of [b01f18e0-9939-4169-9312-90c3900d7d91](sensor-id).
+    - Retrieve sensor data from [7725a87e-30a0-4816-9277-ec2c3d48e840](sensor-id).
+    - Tell me more about the device [3f8239e7-4720-4a4f-80b9-344cbdedcc14](sensor-id).
+    - Display information for [f9c43b84-cf3d-4830-92e1-ee3ab12d24e0](sensor-id).
+    - Provide insights for [ddc6e6f2-c28e-4296-b703-20239f09dcea](sensor-id).
+    - Share data associated with [9921d07a-0b9e-4ef2-9f94-8848db678a49](sensor-id).
+    - Explain details of [6ecaa87a-127c-4859-9f85-b8eb3c59e07f](sensor-id).
+    - Retrieve sensor information related to [d38c1101-3d5d-421b-9442-f825f9ed0a18](sensor-id).
+    - Fetch data from sensor [c7c6f415-e169-4a80-8cc5-1dd61e149f76](sensor-id).
+    - Get insights from [b01f18e0-9939-4169-9312-90c3900d7d91](sensor-id).
+    - Provide details for [723125c2-d9af-4154-b753-31c6663198ed](sensor-id).
+    - Show sensor information for [b5d487ce-5a84-48d0-9c4b-76f95140d905](sensor-id).
+    - Tell me more about the device [eceeb08b-3e8d-4a8f-8ba7-fa01a545fc5f](sensor-id).
+    - Display information for [78bf50cd-aa35-42cc-9515-0793aa64a020](sensor-id).
+    - Share data associated with [4a9f79c0-94b9-45e0-993b-4da17b8162ef](sensor-id).
+    - Explain details of [00b9f765-161e-462f-9d24-189321f25f47](sensor-id).
+    - Retrieve sensor data from [1298a8a3-100d-4f18-8cf3-9da2d2451b19](sensor-id).
+    - Fetch information linked to [6be99d21-2e6c-47b4-824e-e99e76137f10](sensor-id).
+    - Provide insights on the identifier [a304ba41-aceb-42b0-9605-5bf3ea22b5c7](sensor-id).
+    - Get specifics for [1d377ca4-36db-4edc-8120-99420ca7e657](sensor-id).
+- intent: fetch-all-sensors
+  examples: |
+    - Can you display a comprehensive list of all [sensors](iot-sensors) and their current [statuses](sensor-status)?
+    - I need an overview of the entire [sensor database](iot-sensors), including the operational states of each [sensor](iot-sensors).
+    - List down all the [sensors](iot-sensors) along with their respective [on/off indicators](sensor-status).
+    - Show me the complete [sensor data](iot-sensors), covering both [temperature sensors](sensor-type) and [humidity sensors](sensor-type).
+    - Retrieve the full information of all [sensors](iot-sensors) enlisted, including their active or inactive [statuses](sensor-status).
+    - Provide a detailed report containing the [statuses](sensor-status) of each [sensor device](iot-sensors) in the database.
+    - Display the entire [sensor inventory](iot-sensors) with details about whether they are turned on or off.
+    - I'm looking for a consolidated view of all [sensors](iot-sensors) and their current operational conditions.
+    - Give me a summarized list of all [sensors](iot-sensors), indicating which ones are currently functioning.
+    - Fetch the complete [sensor dataset](iot-sensors), differentiating between [temperature sensors](sensor-type) and [humidity sensors](sensor-type).
+    - Can you list all the [sensors](iot-sensors) on record, specifying their operational [statuses](sensor-status)?
+    - I need an up-to-date report on the [sensor database](iot-sensors), showcasing the [statuses](sensor-status) of each [sensor](iot-sensors).
+    - Show the entire [sensor data](iot-sensors), including [temperature sensors](sensor-type) and [humidity sensors](sensor-type) and whether they're active.
+    - Display a complete overview of [sensors](iot-sensors) and their [statuses](sensor-status) present in the database.
+    - Retrieve the current operational states of all [sensors](iot-sensors) along with their [types](sensor-type).
+    - Provide me with a detailed list of [sensors](iot-sensors), highlighting their [on/off conditions](sensor-status).
+    - List down all [sensor devices](iot-sensors) and their corresponding operational [statuses](sensor-status).
+    - I'm interested in the entire [sensor database](iot-sensors); please include whether each [sensor](iot-sensors) is on or off.
+    - Show me the complete [sensor information](iot-sensors), indicating which [sensors](iot-sensors) are currently turned on.
+    - Can you fetch the full data for [temperature sensors](sensor-type) along with their [statuses](sensor-status)?
+    - I need a comprehensive list of [sensors](iot-sensors) with their operational [statuses](sensor-status) and [types](sensor-type).
+    - Display a summarized report of [sensors](iot-sensors), categorizing them by their current [on/off statuses](sensor-status).
+    - Retrieve the complete [sensor data](iot-sensors), distinguishing between [temperature sensors](sensor-type) and [humidity sensors](sensor-type).
+    - Provide an overview of all [sensors](iot-sensors) and their [statuses](sensor-status) stored in the database.
+    - List all [sensors](iot-sensors) along with their [on/off indications](sensor-status); I want a complete dataset.
+    - I'm looking for a detailed report on the [sensor database](iot-sensors), showing the [statuses](sensor-status) of each [sensor](iot-sensors).
+    - Show the entire [sensor inventory](iot-sensors) with details about their operational [conditions](sensor-status).
+    - Give me a consolidated view of all [sensors](iot-sensors) and whether they are currently [functioning](sensor-status).
+    - Fetch the complete [sensor dataset](iot-sensors), including [temperature and humidity sensor information](sensor-type).
+    - Can you list all the [sensors](iot-sensors) recorded, along with their current operational [statuses](sensor-status)?
+    - I need an updated report on the [sensor database](iot-sensors), including the [statuses](sensor-status) of each [sensor](iot-sensors).
+    - Display the entire [sensor data](iot-sensors), encompassing both [temperature sensors](sensor-type) and [humidity sensors](sensor-type).
+    - Retrieve the current [statuses](sensor-status) of all [sensors](iot-sensors) and categorize them by [types](sensor-type).
+    - Provide me with a detailed list of [sensors](iot-sensors), indicating their current [operational states](sensor-status).
+    - List down all [sensor devices](iot-sensors) and their corresponding [on/off indicators](sensor-status).
+    - I'm interested in the entire [sensor database](iot-sensors), including the on/off [statuses](sensor-status) of each [sensor](iot-sensors).
+    - Show me the complete [sensor information](iot-sensors), highlighting the [sensors](iot-sensors) that are turned on.
+    - Can you fetch the full dataset for [temperature sensors](sensor-type) along with their [statuses](sensor-status)?
+    - I need a comprehensive list of [sensors](iot-sensors), including their [operational conditions](sensor-status) and [types](sensor-type).
+    - Display a summarized report of [sensors](iot-sensors), organized by their current [statuses](sensor-status).
+    - Retrieve the complete [sensor data](iot-sensors), making a distinction between [temperature sensors](sensor-type) and [humidity sensors](sensor-type).
+    - Provide an overview of all [sensors](iot-sensors) in the database, including their [operational statuses](sensor-status).
+    - List all [sensors](iot-sensors) along with their [on/off statuses](sensor-status); I want the complete picture.
+    - I'm looking for an elaborate report on the [sensor database](iot-sensors), indicating the [statuses](sensor-status) of each [sensor](iot-sensors).
+    - Show the entire [sensor inventory](iot-sensors) and provide details about their current [operational states](sensor-status).
+    - Give me a consolidated view of all [sensors](iot-sensors), specifying whether they are [active](sensor-status) or not.
+    - Fetch the complete [sensor dataset](iot-sensors), covering information about [temperature and humidity sensors](sensor-type).
+    - I need an up-to-date report on the [sensor database](iot-sensors), outlining the [statuses](sensor-status) of sensors.
+    - Display the entire [sensor data](iot-sensors), incorporating details about both [temperature sensors](sensor-type) and [humidity sensors](sensor-type).
+    - Show me all the sensors
+    - show me all the sensors
+    - fetch all the sensors
+- intent: count-sensors
+  examples: |
+    - how many sensors are there?
+    - provide the total number of sensors please.
+    - Retrieve the total count of sensors in the [inventory database](iot-sensors).
+    - How many sensors are currently stored in the [inventory database](iot-sensors)?
+    - List the total number of sensors recorded in the [inventory system](iot-sensors).
+    - Get me the grand total of sensors in the [inventory](iot-sensors).
+    - Count all the sensors in the [inventory database](iot-sensors).
+    - What is the cumulative number of sensors in the [inventory](iot-sensors)?
+    - Provide the sum total of sensors available in the [inventory](iot-sensors).
+    - Show me the overall sensor count in the [inventory](iot-sensors).
+    - Display the quantity of sensors in the [inventory database](iot-sensors).
+    - How many sensors have been logged in the [inventory system](iot-sensors)?
+    - Enumerate the total sensors in the [inventory](iot-sensors).
+    - I need the total sensor count from the [inventory](iot-sensors).
+    - Calculate the total number of sensors in the [inventory](iot-sensors).
+    - Sum up all the sensors in the [inventory database](iot-sensors).
+    - Give me the grand total of sensors in [inventory records](iot-sensors).
+    - Count the sensors currently registered in the [inventory](iot-sensors).
+    - Show me a tally of all sensors in the [inventory](iot-sensors).
+    - Find out how many sensors exist in the [inventory](iot-sensors).
+    - Provide a count of sensors in the [inventory](iot-sensors) system.
+    - Fetch the number of sensors stored in the inventory.
+    - List the total sensor quantity in the [inventory database](iot-sensors).
+    - What is the aggregate sensor count in the [inventory](iot-sensors)?
+    - I'd like to see the overall sensor [inventory](iot-sensors) count.
+    - Report the sum total of sensors within the [inventory](iot-sensors).
+    - Retrieve the collective sensor count in the [inventory](iot-sensors).
+    - Calculate the sum of sensors in the [inventory system](iot-sensors).
+    - Show the total number of sensors present in the [inventory](iot-sensors).
+    - Display the grand sum of sensors within the [inventory](iot-sensors).
+    - How many sensors are currently documented in [inventory](iot-sensors)?
+    - Count all sensors available in the [inventory database](iot-sensors).
+    - List the accumulated count of sensors in the [inventory](iot-sensors).
+    - Provide a total sensor tally from the [inventory](iot-sensors).
+    - Fetch the number of sensors recorded in the [inventory](iot-sensors).
+    - Show me the comprehensive sensor count in the [inventory](iot-sensors).
+    - What is the grand total of sensors in the [inventory](iot-sensors)?
+    - I need to know the total sensor quantity in [inventory](iot-sensors).
+    - Summarize the sensor count in the [inventory](iot-sensors) system.
+    - Report the sum total of sensors in the [inventory records](iot-sensors).
+    - Calculate the overall sensor count in the [inventory](iot-sensors).
+    - Display the total quantity of sensors in the [inventory](iot-sensors).
+    - Enumerate the cumulative sensor count in the [inventory](iot-sensors).
+    - Count the sensors documented in the [inventory](iot-sensors).
+    - Provide a summary of sensor quantities in the [inventory](iot-sensors).
+    - Retrieve the count of all sensors in the [inventory](iot-sensors).
+    - Show the aggregated sensor total in the [inventory](iot-sensors).
+    - How many sensors are currently logged in the [inventory](iot-sensors)?
+    - List the grand total of sensors in the [inventory database](iot-sensors).
+    - Report the collective sensor count in the [inventory](iot-sensors).
+    - Calculate the sum of all sensors in the [inventory](iot-sensors).
+    - Display the overall sensor count for the [inventory system](iot-sensors).
+    - How many [temperature](sensor-type) and [humidity](sensor-type) sensors are currently in use?
+    - Can you provide the count of [temperature](sensor-type) and [humidity](sensor-type) sensors?
+    - Give me the total number of sensors for [temperature](sensor-type) and [humidity](sensor-type).
+    - What's the quantity of sensors measuring [temperature](sensor-type) and [humidity](sensor-type)?
+    - Tell me how many sensors are recording [temperature](sensor-type) and [humidity](sensor-type) data.
+    - I'm interested in the total number of [temperature](sensor-type) and [humidity](sensor-type) sensors.
+    - Please retrieve the count of sensors for [temperature](sensor-type) and [humidity](sensor-type).
+    - How many sensors are dedicated to monitoring [temperature](sensor-type) and [humidity](sensor-type)?
+    - Provide me with the total count of [temperature](sensor-type) and [humidity](sensor-type) sensors.
+    - Tell me the number of sensors that measure [temperature](sensor-type) and [humidity](sensor-type).
+    - What's the total sensor count for [temperature](sensor-type) and [humidity](sensor-type)?
+    - I'd like to know the quantity of sensors for [temperature](sensor-type) and [humidity](sensor-type).
+    - Please fetch the number of [temperature](sensor-type) and [humidity](sensor-type) sensors.
+    - Give me the count of sensors specifically for [temperature](sensor-type) and [humidity](sensor-type).
+    - How many sensors are there for [temperature](sensor-type) and [humidity](sensor-type) readings?
+    - Provide the total number of sensors that track [temperature](sensor-type) and [humidity](sensor-type).
+    - Tell me the quantity of [temperature](sensor-type) and [humidity](sensor-type) sensors available.
+    - What is the current sensor count for [temperature](sensor-type) and [humidity](sensor-type)?
+    - I want to know how many sensors are assigned to [temperature](sensor-type) and [humidity](sensor-type).
+    - Retrieve the total count of sensors measuring [temperature](sensor-type) and [humidity](sensor-type).
+    - Can you tell me the number of sensors for [temperature](sensor-type) and [humidity](sensor-type)?
+    - What's the total sensor count for [temperature](sensor-type) and [humidity](sensor-type) monitoring?
+    - Please share the quantity of sensors related to [temperature](sensor-type) and [humidity](sensor-type).
+    - How many sensors have been deployed for [temperature](sensor-type) and [humidity](sensor-type)?
+    - Give me the count of sensors specifically designed for [temperature](sensor-type) and [humidity](sensor-type).
+    - Tell me the total number of sensors used for [temperature](sensor-type) and [humidity](sensor-type).
+    - I'm curious about the number of sensors dedicated to [temperature](sensor-type) and [humidity](sensor-type).
+    - Provide the current sensor count for [temperature](sensor-type) and [humidity](sensor-type).
+    - Share the total number of sensors involved in [temperature](sensor-type) and [humidity](sensor-type) monitoring.
+    - I'd like to see how many sensors are registered for [temperature](sensor-type) and [humidity](sensor-type).
+    - What's the count of [temperature](sensor-type) and [humidity](sensor-type) sensors in the system?
+    - Retrieve the quantity of sensors for [temperature](sensor-type) and [humidity](sensor-type) measurements.
+    - Tell me how many sensors are actively recording [temperature](sensor-type) and [humidity](sensor-type).
+    - What is the total sensor count for [temperature](sensor-type) and [humidity](sensor-type) data?
+    - Provide me with the number of sensors related to [temperature](sensor-type) and [humidity](sensor-type).
+    - How many sensors are allocated for [temperature](sensor-type) and [humidity](sensor-type) readings?
+    - Can you please fetch the total count of [temperature](sensor-type) and [humidity](sensor-type) sensors?
+    - What's the quantity of sensors currently monitoring [temperature](sensor-type) and [humidity](sensor-type)?
+    - Give me the count of sensors used exclusively for [temperature](sensor-type) and [humidity](sensor-type).
+    - Tell me the total number of sensors focused on [temperature](sensor-type) and [humidity](sensor-type).
+    - I want to know the number of sensors specifically for [temperature](sensor-type) and [humidity](sensor-type).
+    - Retrieve the current sensor count for [temperature](sensor-type) and [humidity](sensor-type) measurement.
+    - Please share the total sensor count for [temperature](sensor-type) and [humidity](sensor-type) data.
+    - How many sensors are designated for [temperature](sensor-type) and [humidity](sensor-type) tracking?
+    - Provide the quantity of sensors for [temperature](sensor-type) and [humidity](sensor-type) purposes.
+    - What is the count of sensors that handle [temperature](sensor-type) and [humidity](sensor-type) data?
+    - Tell me how many sensors are actively collecting [temperature](sensor-type) and [humidity](sensor-type).
+    - What's the total sensor count for [temperature](sensor-type) and [humidity](sensor-type) analysis?
+    - I'd like to see the number of sensors associated with [temperature](sensor-type) and [humidity](sensor-type).
+    - Can you fetch the total count of sensors used for [temperature](sensor-type) and [humidity](sensor-type)?
+- intent: fetch-running-sensors
+  examples: |
+    - fetch the running sensors
+    - show me all the running sensors only 
+    - how many running sensors we have
+    - how many [temperature](sensor-type) and [humidity](sensor-type) sensors are turned ON ?
+    - show me the count of active sensors only.
+    - how many sensors are active and up
+    - how many sensors are up and running
+    - tell me the count of on sensors.
+    - Fetch the running sensors count.
+    - How many sensors are currently operational?
+    - Show me the number of sensors that are currently active.
+    - Give me a count of sensors that are currently in the "on" state.
+    - How many sensors are currently functioning?
+    - Provide me with a total count of sensors that are currently running.
+    - I'd like to know the quantity of sensors that are currently in use.
+    - Show me the total count of sensors that are currently turned on.
+    - How many sensors are currently enabled?
+    - Give me the number of sensors that are currently active and operational.
+    - Display the count of sensors that are currently on.
+    - What's the total number of sensors in an active state?
+    - Can you tell me how many sensors are up and running?
+    - Show me the count of sensors that are currently online.
+    - How many sensors are in an "on" status right now?
+    - Provide me with the count of sensors that are currently functioning.
+    - Give me the number of sensors that are currently turned on.
+    - Show me the total count of sensors that are active.
+    - How many sensors are currently in working condition?
+    - Display the count of sensors that are currently operational.
+    - Can you tell me how many sensors are currently activated?
+    - How many sensors are currently powered on?
+    - Give me the number of sensors that are currently running.
+    - Show me the total count of sensors that are up.
+    - How many sensors are currently turned on and functional?
+    - Provide me with the count of sensors that are currently enabled.
+    - Tell me the number of sensors that are currently in an "on" state.
+    - Show me the total count of sensors that are up and operational.
+    - How many sensors are in an "on" status and operational at the moment?
+    - Provide me with the count of sensors that are currently in use.
+    - Give me the number of sensors that are currently powered on.
+    - Show me the total count of sensors that are currently in an active state.
+    - How many sensors are currently turned on and operational?
+    - Tell me the number of sensors that are currently activated and functioning.
+    - Show me the total count of sensors that are currently enabled and operational.
+    - How many sensors are currently in an "on" state and operational?
+    - Provide me with the count of sensors that are currently running and active.
+    - Give me the number of sensors that are currently in working condition.
+    - Display the count of sensors that are currently operational and online.
+    - Can you tell me how many sensors are up and running without issues?
+    - Show me the count of sensors that are currently active and functional.
+    - How many sensors are in an "on" status and working well?
+    - Provide me with the count of sensors that are currently in use and operational.
+    - Tell me the number of sensors that are currently powered on and functioning.
+- intent: fetch-stopped-sensors
+  examples: |
+    - fetch the stopped sensors
+    - Fetch the stopped sensors count.
+    - How many sensors are currently non-operational?
+    - Show me the number of sensors that are currently inactive.
+    - Give me a count of sensors that are currently in the "off" state.
+    - How many sensors are currently not functioning?
+    - Provide me with a total count of sensors that are currently stopped.
+    - I'd like to know the quantity of sensors that are currently not in use.
+    - Show me the total count of sensors that are currently turned off.
+    - How many sensors are currently disabled?
+    - Give me the number of sensors that are currently inactive and non-operational.
+    - Display the count of sensors that are currently off.
+    - What's the total number of sensors in an inactive state?
+    - Can you tell me how many sensors are down or not running?
+    - Show me the count of sensors that are currently offline.
+    - How many sensors are in an "off" status right now?
+    - Provide me with the count of sensors that are currently non-functioning.
+    - Give me the number of sensors that are currently turned off.
+    - Show me the total count of sensors that are inactive.
+    - How many sensors are currently in non-working condition?
+    - Display the count of sensors that are currently non-operational.
+    - Can you tell me how many sensors are currently deactivated?
+    - How many sensors are currently powered off?
+    - Give me the number of sensors that are currently not running.
+    - Show me the total count of sensors that are down.
+    - How many sensors are currently turned off and non-functional?
+    - Provide me with the count of sensors that are currently disabled.
+    - Tell me the number of sensors that are currently in an "off" state.
+    - Show me the total count of sensors that are down and non-operational.
+    - How many sensors are in an "off" status and non-operational at the moment?
+    - Provide me with the count of sensors that are currently not in use.
+    - Give me the number of sensors that are currently powered off.
+    - Show me the total count of sensors that are currently in an inactive state.
+    - How many sensors are currently turned off and non-operational?
+    - Tell me the number of sensors that are currently deactivated and not functioning.
+    - Show me the total count of sensors that are currently disabled and non-operational.
+    - How many sensors are currently in an "off" state and non-operational?
+    - Provide me with the count of sensors that are currently stopped and inactive.
+    - Give me the number of sensors that are currently in non-working condition.
+    - Display the count of sensors that are currently non-operational and offline.
+    - Can you tell me how many sensors are down and not running without issues?
+    - Show me the count of sensors that are currently inactive and non-functional.
+    - How many sensors are in an "off" status and not working well?
+    - Provide me with the count of sensors that are currently not in use and inactive.
+    - Tell me the number of sensors that are currently powered off and not functioning.

@@ -1,0 +1,80 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+# new data
+- story: Fetching sensors
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch-all-sensors
+  - action: action_retrieve_sensor
+  - action: utter_anything_else
+- story: Fetching count of sensors
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: count-sensors
+  - action: action_retrieve_sensor
+  - action: utter_anything_else
+- story: Fetching count of running sensors
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch-running-sensors
+  - action: action_retrieve_sensor
+  - action: utter_anything_else
+- story: Fetching count of stopped sensors
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch-stopped-sensors
+  - action: action_retrieve_sensor
+  - action: utter_anything_else
+- story: Fetching certain sensor details
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch-sensor-details
+    entities:
+    - sensor-id: 267a0366-4b24-11ee-be56-0242ac120002
+  - slot_was_set:
+    - sensor-id: 267a0366-4b24-11ee-be56-0242ac120002
+  - action: action_retrieve_sensor
+  - action: utter_anything_else
+- story: Fetching details of sensors
+  steps:
+  - intent: fetch-sensor-details
+    entities:
+    - sensor-id: 267a4366-4b24-11ee-be56-0142ac120002
+  - slot_was_set:
+    - sensor-id: 267a4366-4b24-11ee-be56-0142ac120002
+  - action: action_retrieve_sensor
+  - action: utter_anything_else
+

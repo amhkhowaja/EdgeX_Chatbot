@@ -1,0 +1,30 @@
+# Use the official Rasa base image
+FROM rasa/rasa:latest
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Install spaCy and the en_core_web_md model
+USER 0
+RUN pip install --upgrade pip
+RUN pip install spacy
+RUN python -m spacy download en_core_web_md
+
+
+# Copy your Rasa project files into the container
+COPY ./data/ /app/data
+COPY ./actions /app/actions
+COPY ./config.yml /app/config.yml
+COPY ./domain.yml /app/domain.yml
+COPY ./tests /app/tests
+COPY ./credentials.yml /app/credentials.yml
+COPY ./endpoints.yml /app/endpoints.yml
+
+# Install additional Python libraries, if needed
+# RUN pip install <library_name>
+
+# Train the Rasa model
+RUN rasa train
+
+# Start the Rasa server
+CMD ["run", "-p", "5005", "--enable-api", "--cors","*"]

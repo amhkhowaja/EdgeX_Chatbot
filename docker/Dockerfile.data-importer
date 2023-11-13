@@ -1,0 +1,12 @@
+# Stage 1: Build Python environment with the required libraries and the script
+FROM python:3.9-slim AS builder
+
+WORKDIR /app
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install influxdb
+
+COPY ../sensor-data/import-data.py /app/
+COPY ../sensor-data/sensor.csv /app/
+
+ENTRYPOINT ["python3", "/app/import-data.py"]

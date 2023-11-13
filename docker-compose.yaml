@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  rasa:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.rasa
+    container_name: Rasa_Server
+    ports:
+      - "5005:5005"
+    command: ["run", "-p", "5005", "--enable-api", "--cors","*"]
+    depends_on:
+      - rasa_actions
+    volumes:
+      - ./data:/app/data
+      - ./actions:/app/actions
+      - ./config.yml:/app/config.yml
+      - ./domain.yml:/app/domain.yml
+      - ./endpoints.yml:/app/endpoints.yml
+      - ./tests:/app/tests
+    environment:
+      - TZ=UTC
+    networks:
+      - edgex-network
+
+  rasa_actions:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.actions
+    container_name: Rasa_Action_Server
+    depends_on:
+      - influxdb
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+    environment:
+      - TZ=UTC
+      - RASA_ACTION_ENDPOINT=http://localhost:5055/webhook
+    networks:
+      - edgex-network
+
+  influxdb:
+    image: influxdb:1.5
+    container_name: influx_db
+    ports:
+      - "8086:8086"
+    environment:
+      - INFLUXDB_PORT=8086
+      - INFLUXDB_HOST=influxdb
+      - INFLUXDB_DB=sensordata
+      - INFLUXDB_ADMIN_USER=root
+      - INFLUXDB_ADMIN_PASSWORD=pass
+      - INFLUXDB_HTTP_AUTH_ENABLED=true
+    networks:
+      - edgex-network
+
+  data-importer:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.data-importer
+    container_name: data-importer-job
+    depends_on:
+      - influxdb
+    networks:
+      - edgex-network
+
+  networks:
+    edgex-network:
